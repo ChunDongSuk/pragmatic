@@ -1,0 +1,28 @@
+<div style="border: 1px solid #bbb; border-radius: 1rem; text-align: left;
+padding: 4%; margin: 1rem 0;">
+    <div style="display: flex; align-items: center;">
+        {% if comment.writer.profile.nickname %}
+            <img src="{{ comment.writer.profile.image.url }}" alt=""
+                 style="height:2.2rem; width:2.2rem; border-radius: 20rem; margin-right: 1rem;">
+            <strong>
+                {{ comment.writer.profile.nickname }}
+            </strong>
+        {% else %}
+            <strong>
+                Not set Nickname
+            </strong>]
+        {% endif %}
+        &nbsp&nbsp&nbsp
+        {{ comment.created_at }}
+    </div>
+    <div style="margin: 1rem 0;">
+        {{ comment.content }}
+    </div>
+    {% if comment.writer == user %}
+        <div style="text-align: right;">
+            <a href="{% url 'commentapp:delete' pk=comment.pk %}">
+                <i class="fas fa-trash-alt"></i>
+            </a>
+        </div>
+    {% endif %}
+</div>
