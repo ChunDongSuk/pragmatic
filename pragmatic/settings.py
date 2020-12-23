@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4',
-    'accountapp',
-    'profileapp',
-    'articleapp',
-    'commentapp',
+    'accountapp.apps.AccountappConfig',
+    'profileapp.apps.ProfileappConfig',
+    'articleapp.apps.ArticleappConfig',
+    'commentapp.apps.CommentappConfig',
     'projectapp.apps.ProjectappConfig',
+    'subscribeapp.apps.SubscribeappConfig',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
